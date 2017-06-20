@@ -48,6 +48,23 @@ app.post("/post_login", handle_request.handle_login);
 
 
 
+
+var mobile_api = require('./routes/mobile_api')
+//=========================== mobile api ======================================
+
+app.post('/mobile_api/login', mobile_api.login);
+app.get('/mobile_api/get_my_cart', mobile_api.get_my_cart);
+
+
+
+//=========================== mobile api ======================================
+
+
+
+
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
