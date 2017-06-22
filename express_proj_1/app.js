@@ -13,6 +13,21 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var handle_request = require('./routes/handle_request');
 
+
+
+
+
+
+//Handlers
+var store_item_add = require('./routes/store_item/store_item_add')
+var store_item_getall = require('./routes/store_item/store_item_getall')
+var store_item_update = require('./routes/store_item/store_item_update')
+var store_item_delete = require('./routes/store_item/store_item_delete')
+
+
+
+
+
 var app = express();
 
 console.log("__dirname " + __dirname);
@@ -64,6 +79,14 @@ app.get('/mobile_api/get_my_cart', mobile_api.get_my_cart);
 
 
 app.get('/dummy_insert', mobile_api2.insertDummyData);
+
+
+
+app.post('/mobile_api/admin/item/add', store_item_add.handleRequest)
+app.get('/mobile_api/admin/item/getall', store_item_getall.handleRequest)
+app.put('/mobile_api/admin/item/update', store_item_update.handleRequest)
+app.delete('/mobile_api/admin/item/:id', store_item_delete.handleRequest)
+
 
 
 //=========================== mobile api ======================================
