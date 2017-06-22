@@ -44,12 +44,18 @@ app.get("/my_defined_url", function(request, response){
 
 
 app.get("/login", handle_request.login);
+
+app.get("/signup", handle_request.render_signup);
+app.post("/api/signup", handle_request.perform_signup);
+
+
 app.post("/post_login", handle_request.handle_login);
 
 
 
 
 var mobile_api = require('./routes/mobile_api')
+var mobile_api2 = require('./routes/mobile_api2')
 //=========================== mobile api ======================================
 
 app.post('/mobile_api/login', mobile_api.login);
@@ -57,7 +63,13 @@ app.get('/mobile_api/get_my_cart', mobile_api.get_my_cart);
 
 
 
+app.get('/dummy_insert', mobile_api2.insertDummyData);
+
+
 //=========================== mobile api ======================================
+
+
+
 
 
 

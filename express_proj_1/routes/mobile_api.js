@@ -1,3 +1,6 @@
+
+var db_utils = require('../db/db_utils');
+
 var users = [
 	{user_id:1, user_name:"amit", password:"123456", token:"qwewq"},
 	{user_id:2, user_name:"abhi", password:"654321", token:"abhi654321"},
