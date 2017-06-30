@@ -4,14 +4,11 @@ html
         title #{title}
     body
         h1 Welcome to my #{title}
-
-
-
-        form(action='/post_login' method="post" )
+        form(action='/login' method="post" )
           div
             label
               b Username
-            input(type='text', placeholder='Enter Username', name='user_name', required='')
+            input(type='text', placeholder='Enter Username', name='username', required='')
             br
             label
               b Password
@@ -22,17 +19,5 @@ html
 
 
 
-
-
-        - var testVariable = 6
-        - var doubleData = 2 * testVariable
-        h2 testDta #{testVariable}
-        h2 doubleData #{doubleData}
-
-        ul
-            - var array = [1, 3, "hello", "Domain", "Mathrusoft", "Welcome"];
-            -for (var i = 0; i < array.length; i++) {
-                li #{array[i]}
-            -}
 
 
